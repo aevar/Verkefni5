@@ -1,0 +1,42 @@
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\Verkefni5 - Music Mashup.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\Verkefni5 - Music Mashup.pdb
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\EntityFramework.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\Microsoft.Web.Infrastructure.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Json.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Net.Http.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Net.Http.Formatting.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Net.Http.WebRequest.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Helpers.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Common.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.EntityFramework.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.Helpers.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.WebHost.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Mvc.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Optimization.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Providers.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Razor.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Deployment.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.WebPages.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Razor.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\EntityFramework.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Json.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Net.Http.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Net.Http.Formatting.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Net.Http.WebRequest.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Helpers.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Common.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.EntityFramework.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.Helpers.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Http.WebHost.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Mvc.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.Razor.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.WebPages.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Deployment.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Razor.xml
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\obj\Debug\ResolveAssemblyReference.cache
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\obj\Debug\Verkefni5 - Music Mashup.dll
+c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\obj\Debug\Verkefni5 - Music Mashup.pdb
