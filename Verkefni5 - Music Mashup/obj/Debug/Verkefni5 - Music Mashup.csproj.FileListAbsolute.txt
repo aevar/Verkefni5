@@ -40,3 +40,46 @@ c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Musi
 c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\obj\Debug\ResolveAssemblyReference.cache
 c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\obj\Debug\Verkefni5 - Music Mashup.dll
 c:\users\ævar eggertsson\documents\visual studio 2010\Projects\Verkefni5 - Music Mashup\Verkefni5 - Music Mashup\obj\Debug\Verkefni5 - Music Mashup.pdb
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\Verkefni5 - Music Mashup.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\Verkefni5 - Music Mashup.pdb
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\EntityFramework.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Json.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Net.Http.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Net.Http.Formatting.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Net.Http.WebRequest.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Helpers.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Common.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.EntityFramework.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.Helpers.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.WebHost.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Mvc.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Optimization.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Providers.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Razor.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Deployment.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.WebPages.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Razor.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\taglib-sharp.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\EntityFramework.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Json.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Net.Http.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Net.Http.Formatting.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Net.Http.WebRequest.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Helpers.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Common.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.EntityFramework.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.Data.Helpers.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Http.WebHost.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Mvc.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.Razor.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.WebPages.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Deployment.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\bin\System.Web.WebPages.Razor.xml
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\obj\Debug\Verkefni5 - Music Mashup.dll
+C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\obj\Debug\Verkefni5 - Music Mashup.pdb

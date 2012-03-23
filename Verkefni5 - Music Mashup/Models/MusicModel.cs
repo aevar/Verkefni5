@@ -8,13 +8,17 @@ namespace MusicMashup.Models
 {
     public class MusicModel
     {
+        [Key]
+        public Guid MusicId { get; set; }
         [Required]
-        string Title { get; set; }
+        public string Title { get; set; }
         [Required]
-        string Artist { get; set; }
-        string Disk { get; set; }
-        int Track { get; set; }
-        int Length { get; set; }
-        string Genere { get; set; }
+        public string Artist { get; set; }
+        public string Disk { get; set; }
+        public uint Track { get; set; }
+        public long Length { get; set; }
+        public string Genere { get; set; }
+
+        public string Url { get; set; }
     }
 }
