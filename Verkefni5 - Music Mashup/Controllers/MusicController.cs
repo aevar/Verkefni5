@@ -53,7 +53,7 @@ namespace MusicMashup.Controllers
         }
 
         // POST /api/music
-        public HttpResponseMessage<MusicModel> Post(dynamic data)
+        public HttpResponseMessage<MusicModel> Post()
         {
             var files = HttpContext.Current.Request.Files;
 
@@ -63,7 +63,8 @@ namespace MusicMashup.Controllers
             foreach( var item in files.AllKeys )
             {
                 var postedFile = files[item];
-                postedFile.SaveAs( "/Content/Music" );
+                string id = Guid.NewGuid().ToString();
+                postedFile.SaveAs(HttpContext.Current.Server.MapPath("~/Content/Music") + "\\" + id + ".mp3");
             }
             return new HttpResponseMessage<MusicModel>(System.Net.HttpStatusCode.Accepted);
         }
