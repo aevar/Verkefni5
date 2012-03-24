@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Caching;
 using System.Web;
+using MusicMashup.Models;
 
 namespace MusicMashup.Controllers
 {
@@ -19,7 +20,7 @@ namespace MusicMashup.Controllers
             if (list == null)
             {
                 list = new List<Models.MusicModel>();
-                foreach (string filepath in System.IO.Directory.GetFiles(@"C:\Users\aevare\Documents\Visual Studio 2010\Projects\MusicMashup\Verkefni5\Verkefni5 - Music Mashup\Content\Music"))
+                foreach (string filepath in System.IO.Directory.GetFiles(HttpContext.Current.Server.MapPath("~/Content/Music")))
                 {
                     TagLib.File file = TagLib.File.Create(filepath);
                     Models.MusicModel song = new Models.MusicModel();
@@ -52,8 +53,19 @@ namespace MusicMashup.Controllers
         }
 
         // POST /api/music
-        public void Post(string value)
+        public HttpResponseMessage<MusicModel> Post(dynamic data)
         {
+            var files = HttpContext.Current.Request.Files;
+
+            // This code should work with any number of files uploaded by the user, either by having 
+            // multiple <input type="file" /> controls inside the form, or by adding the new multiple="multiple" attribute
+            // (which is not supported in all browsers).
+            foreach( var item in files.AllKeys )
+            {
+                var postedFile = files[item];
+                postedFile.SaveAs( "/Content/Music" );
+            }
+            return new HttpResponseMessage<MusicModel>(System.Net.HttpStatusCode.Accepted);
         }
 
         // PUT /api/music/5
