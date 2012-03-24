@@ -32,8 +32,8 @@ namespace MusicMashup.Controllers
                     song.Length = file.Length;
                     song.Track = file.Tag.Track;
                     song.Title = file.Tag.Title;
-                    song.Genere = string.Join(", ", file.Tag.Genres);
-                    song.Disk = file.Tag.Album;
+                    song.Genres = string.Join(", ", file.Tag.Genres);
+                    song.Album = file.Tag.Album;
                     song.Url = "/api/music/" + file.Name.Split('\\').Last().Replace(".mp3", "");
 
                     list.Add(song);
@@ -70,17 +70,55 @@ namespace MusicMashup.Controllers
         }
 
         // PUT /api/music/5
-        public HttpResponseMessage Put(dynamic data)
+        public HttpResponseMessage Put(Models.MusicModel data)
         {
-            //TODO: Fá lag og vista.. skila réttu responsi.. eyða Cache
-            
-            return new HttpResponseMessage(System.Net.HttpStatusCode.Accepted);
+            HttpResponseMessage theresponse = new HttpResponseMessage();
+
+            string filePath = HttpContext.Current.Server.MapPath("~/Content/Music") + "\\" + data.MusicId.ToString() + ".mp3";
+            if (System.IO.File.Exists(filePath))
+            {
+                TagLib.File file = TagLib.File.Create(filePath);
+                if (!string.IsNullOrWhiteSpace(data.Title)) { file.Tag.Title = data.Title; }
+                if (!string.IsNullOrWhiteSpace(data.Artist)) { file.Tag.Performers = data.Artist.Split(','); }
+                if (!string.IsNullOrWhiteSpace(data.Album)) { file.Tag.Album = data.Album; }
+                if (!string.IsNullOrWhiteSpace(data.Genres)) { file.Tag.Genres = data.Genres.Split(','); }
+                file.Tag.Track = data.Track;
+                file.Save();
+
+                theresponse.StatusCode = System.Net.HttpStatusCode.OK;
+            }
+            else
+            {
+                theresponse.StatusCode = System.Net.HttpStatusCode.NotFound;
+            }
+            return theresponse;
         }
 
         // DELETE /api/music/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(Guid id)
         {
-            //Á þetta að vera hægt???
+            HttpResponseMessage response = new HttpResponseMessage();
+
+            string filePath = HttpContext.Current.Server.MapPath("~/Content/Music") + "\\" + id.ToString() + ".mp3";
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.FileInfo fi = new System.IO.FileInfo(filePath);
+                try
+                {
+                    fi.Delete();
+                    response.StatusCode = System.Net.HttpStatusCode.OK;
+                }
+                catch (System.IO.IOException e)
+                {
+                    response.StatusCode = System.Net.HttpStatusCode.Unauthorized;
+                }
+            }
+            else
+            {
+                response.StatusCode = System.Net.HttpStatusCode.NotFound;
+            }
+
+            return response;
         }
     }
 }
