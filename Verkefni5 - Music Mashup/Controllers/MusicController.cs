@@ -52,6 +52,24 @@ namespace MusicMashup.Controllers
             return Get().SingleOrDefault(x => x.MusicId == id);
         }
 
+        // GET /api/music/5
+        public HttpResponseMessage Get(Guid id, string play)
+        {
+            string musicPath = HttpContext.Current.Server.MapPath("~/Content/Music") + "\\" + id.ToString() + ".mp3";
+            if (System.IO.File.Exists(musicPath))
+            {
+                HttpResponseMessage result = new HttpResponseMessage(System.Net.HttpStatusCode.OK);
+                var stream = new System.IO.FileStream(musicPath, System.IO.FileMode.Open);
+                result.Content = new StreamContent(stream);
+                result.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+                return result;
+            }
+            else
+            {
+                return new HttpResponseMessage(System.Net.HttpStatusCode.NotFound);
+            }
+        }
+
         // POST /api/music
         public HttpResponseMessage<MusicModel> Post()
         {
