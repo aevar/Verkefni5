@@ -158,7 +158,9 @@ nav a:hover{
 /* ===== Primary Styles ========================================================
    Author:
    ========================================================================== */
-
+.progress { position:relative; max-width:60%; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+.bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
+.percent { position:absolute; display:inline-block; top:0; left:48%; }
 
 
 
