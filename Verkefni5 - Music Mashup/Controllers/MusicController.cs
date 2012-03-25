@@ -6,7 +6,6 @@ using System.Web.Http;
 using System.Web.Caching;
 using System.Web;
 using MusicMashup.Models;
-using System.Collections;
 
 namespace MusicMashup.Controllers
 {
@@ -29,7 +28,7 @@ namespace MusicMashup.Controllers
                     s.AddRange(file.Tag.Performers.ToList());
                     song.Artist = string.Join(", ", s.ToArray());
                     //song.Artist = string.Join(", ", file.Tag.Performers, file.Tag.AlbumArtists);
-                    song.MusicId = Guid.Parse(file.Name.Split('\\').Last().Replace(".mp3",""));
+                    song.MusicId = Guid.Parse(file.Name.Split('\\').Last().Replace(".mp3", ""));
                     song.Length = file.Length;
                     song.Track = file.Tag.Track;
                     song.Title = file.Tag.Title;
@@ -42,6 +41,27 @@ namespace MusicMashup.Controllers
                 }
 
                 cache.Insert("songlist", list, null, Cache.NoAbsoluteExpiration, TimeSpan.FromMinutes(30));
+            }
+
+            return list;
+        }
+
+        //Get /api/music?genre=&performer=&title= <-- searchstrings
+        public IEnumerable<Models.MusicModel> Get(string genre, string performer, string title)
+        {
+            IEnumerable<Models.MusicModel> list = Get();
+
+            if (!string.IsNullOrWhiteSpace(genre))
+            {
+                list = list.Where(x => x.Genres.Contains(genre));
+            }
+            if (!string.IsNullOrWhiteSpace(performer))
+            {
+                list = list.Where(x => x.Artist.Contains(performer));
+            }
+            if (!string.IsNullOrWhiteSpace(title))
+            {
+                list = list.Where(x => x.Title.Contains(title));
             }
 
             return list;
@@ -60,8 +80,15 @@ namespace MusicMashup.Controllers
             if (System.IO.File.Exists(musicPath))
             {
                 HttpResponseMessage result = new HttpResponseMessage(System.Net.HttpStatusCode.OK);
-                var stream = new System.IO.FileStream(musicPath, System.IO.FileMode.Open);
-                result.Content = new StreamContent(stream);
+                System.IO.FileStream stream = new System.IO.FileStream(musicPath, System.IO.FileMode.Open);
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+                ms.SetLength(stream.Length);
+                stream.Read(ms.GetBuffer(), 0, (int)stream.Length);
+                ms.Flush();
+                stream.Close();
+                stream.Dispose();
+                result.Content = new StreamContent(ms);
                 result.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("audio/mpeg");
                 return result;
             }
@@ -75,26 +102,24 @@ namespace MusicMashup.Controllers
         public HttpResponseMessage<MusicModel> Post()
         {
             var files = HttpContext.Current.Request.Files;
-         
-            // This code should work with any number of files uploaded by the user, either by having 
-            // multiple <input type="file" /> controls inside the form, or by adding the new multiple="multiple" attribute
-            // (which is not supported in all browsers).
-            foreach( var item in files.AllKeys )
+
+            foreach (var item in files.AllKeys)
             {
                 var postedFile = files[item];
                 string id = Guid.NewGuid().ToString();
                 postedFile.SaveAs(HttpContext.Current.Server.MapPath("~/Content/Music") + "\\" + id + ".mp3");
             }
-            RemoveCache();
+            //Hreinsum cacheið
+            HttpContext.Current.Cache.Remove("songlist");
+
             return new HttpResponseMessage<MusicModel>(System.Net.HttpStatusCode.Accepted);
-            
         }
 
         // PUT /api/music/5
         public HttpResponseMessage Put(Models.MusicModel data)
         {
             HttpResponseMessage theresponse = new HttpResponseMessage();
-            
+
             string filePath = HttpContext.Current.Server.MapPath("~/Content/Music") + "\\" + data.MusicId.ToString() + ".mp3";
             if (System.IO.File.Exists(filePath))
             {
@@ -107,12 +132,14 @@ namespace MusicMashup.Controllers
                 file.Save();
 
                 theresponse.StatusCode = System.Net.HttpStatusCode.OK;
+
+                //Hreinsum cacheið
+                HttpContext.Current.Cache.Remove("songlist");
             }
             else
             {
                 theresponse.StatusCode = System.Net.HttpStatusCode.NotFound;
             }
-            RemoveCache();
             return theresponse;
         }
 
@@ -129,6 +156,9 @@ namespace MusicMashup.Controllers
                 {
                     fi.Delete();
                     response.StatusCode = System.Net.HttpStatusCode.OK;
+
+                    //Hreinsum cacheið
+                    HttpContext.Current.Cache.Remove("songlist");
                 }
                 catch (System.IO.IOException e)
                 {
@@ -139,16 +169,8 @@ namespace MusicMashup.Controllers
             {
                 response.StatusCode = System.Net.HttpStatusCode.NotFound;
             }
-            RemoveCache();
+
             return response;
-        }
-        public void RemoveCache()
-        {
-            IDictionaryEnumerator IDenum = HttpContext.Current.Cache.GetEnumerator();
-            while (IDenum.MoveNext())
-            {
-                HttpContext.Current.Cache.Remove(IDenum.Key.ToString());
-            }
         }
     }
 }
