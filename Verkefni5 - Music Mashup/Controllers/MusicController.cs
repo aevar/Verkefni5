@@ -53,15 +53,15 @@ namespace MusicMashup.Controllers
 
             if (!string.IsNullOrWhiteSpace(genre))
             {
-                list = list.Where(x => x.Genres.Contains(genre));
+                list = list.Where(x => x.Genres.ToLower().Contains(genre.ToLower()));
             }
             if (!string.IsNullOrWhiteSpace(performer))
             {
-                list = list.Where(x => x.Artist.Contains(performer));
+                list = list.Where(x => x.Artist.ToLower().Contains(performer.ToLower()));
             }
             if (!string.IsNullOrWhiteSpace(title))
             {
-                list = list.Where(x => x.Title.Contains(title));
+                list = list.Where(x => x.Title.ToLower().Contains(title.ToLower()));
             }
 
             return list;
