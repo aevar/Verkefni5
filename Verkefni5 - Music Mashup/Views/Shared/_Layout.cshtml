@@ -46,7 +46,18 @@
                     $('#upload').hide();
                     $('#songs').show();
                 });
-
+                $('#searchform').submit(function () {
+                    var queryString = $(this).formSerialize();
+                    $.get('/api/music',
+                            queryString,
+                            function (items) {
+                                $("#songlist").empty();
+                                $.each(items, function (i, item) {
+                                    $.tmpl("songListTemplate", item).appendTo("#songlist");
+                                });
+                            });
+                    return false;
+                });
                 (function () {
                     var bar = $('.bar');
                     var percent = $('.percent');
@@ -130,6 +141,12 @@
                     </div>
                 </section>
                 <section id="songs">
+                    <form method="get" id="searchform" action="/api/music" enctype="multipart/form-data">
+                        <input type="genre" name="genre" placeholder="Genre.. pop, rock etc.">
+                        <input type="performer" name="performer" placeholder="Artist"/>
+                        <input type="title" name="title" placeholder="Song title" />
+                        <input type="submit" value="Filter" />
+                    </form>
                     <p>Here come the songs</p>
                     <ul id="songlist">
                     </ul>
