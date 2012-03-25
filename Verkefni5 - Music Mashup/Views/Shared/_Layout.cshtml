@@ -14,11 +14,13 @@
 
         <meta name="viewport" content="width=device-width" />
         <script type="text/javascript">
+            var guitargripapikey = '84e36374bfb324fdce0c62a2260d9c0193bfca64';
+            var selectedItem = null;
+            $.template("songListTemplate", "<li class='song'>${Artist} - ${Title}</li>");
+            $.template("songTemplate", "<span>Artist: ${Artist}</span><span>Title: ${Title}</span><span>Album: ${Album}</span><span>Genre: ${Genres}</span>");
+            $.template("guitarpartysong", "<h1>${title}</h1><em>{{each authors}}${$value.name}, {{/each}}</em><p>${body}</p><div>{{each chords}}<img src='${$value.image_url}' alt='${$value.name}' title='${$value.name}' />{{/each}}</div>")
             $(function () {
-                var selectedItem = null;
                 var audioElem = document.getElementById('audioplayer');
-                $.template("songListTemplate", "<li class='song'>${Artist} - ${Title}</li>");
-                $.template("songTemplate", "<span>Artist: ${Artist}</span><span>Title: ${Title}</span><span>Album: ${Album}</span><span>Genre: ${Genres}</span>");
                 var songs = $.getJSON('/api/music/', function (items) {
                     $.each(items, function (i, item) {
                         $.tmpl("songListTemplate", item).appendTo("#songlist");
@@ -33,6 +35,7 @@
                     var url = selectedItem.data.Url + '?play=true';
                     $('audio').prop('src', url);
                     audioElem.play();
+                    SearchGuitarParty($(this).text());
                 });
                 //TODO: Make true single page app.. not these stupid click functions
                 $('#addsongs').click(function () {
@@ -43,7 +46,7 @@
                     $('#upload').hide();
                     $('#songs').show();
                 });
-               
+
                 (function () {
                     var bar = $('.bar');
                     var percent = $('.percent');
@@ -59,7 +62,6 @@
                             var percentVal = percentComplete + '%';
                             bar.width(percentVal)
                             percent.html(percentVal);
-                            //console.log(percentVal, position, total);
                         },
                         complete: function (xhr) {
                             status.html(xhr.responseText);
@@ -67,6 +69,38 @@
                     });
                 })();
             });
+            function SearchGuitarParty(search_phrase) {
+                console.log(search_phrase);
+                $.ajaxSetup({ beforeSend: function (xhr) { xhr.setRequestHeader('Guitarparty-Api-Key', guitargripapikey); } });
+
+                $.getJSON('http://api.guitarparty.com/v2/songs/?query=' + search_phrase, function (data) {
+                    if (data.objects_count == 0) {
+                        $('#main aside').html('<p>Could not find match</p>');
+                    }
+                    else if (data.objects_count == 1) {
+                        getGuitarPartySong('http://api.guitarparty.com' + data.objects[0].uri)
+                    }
+                    else {
+                        var items = [];
+                        $.each(data.objects, function (key, val) {
+                            items.push('<li id="' + key + '"><a onclick="javascript:getGuitarPartySong(this.href); return false;" href="http://api.guitarparty.com' + val.uri + '">' + val.title + '</a></li>');
+                        });
+                        var html = '<ul>' + items.join('') + '</ul>';
+
+                        $('#main aside').html(html);
+                    }
+                });
+            }
+
+            function getGuitarPartySong(uri) {
+                $.ajaxSetup({ beforeSend: function (xhr) { xhr.setRequestHeader('Guitarparty-Api-Key', guitargripapikey); } });
+
+                $.getJSON(uri, function (data) {
+                    $("#main aside").html('');
+                    $.tmpl("guitarpartysong", data).appendTo("#main aside");
+                    //$('#main aside').html('<h1>' + data.title + '</h1><br />' + data.body + '<br />');
+                });
+            }
         </script>
     </head>
     <body>
