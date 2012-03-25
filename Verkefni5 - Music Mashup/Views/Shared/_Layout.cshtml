@@ -17,23 +17,33 @@
             $(function () {
                 var selectedItem = null;
                 var audioElem = document.getElementById('audioplayer');
-                $.template("songTemplate", "<li class='song'>${Artist} - ${Title}</li>");
+                $.template("songListTemplate", "<li class='song'>${Artist} - ${Title}</li>");
+                $.template("songTemplate", "<span>Artist: ${Artist}</span><span>Title: ${Title}</span><span>Album: ${Album}</span><span>Genre: ${Genres}</span>");
                 var songs = $.getJSON('/api/music/', function (items) {
                     $.each(items, function (i, item) {
-                        $.tmpl("songTemplate", item).appendTo("#songlist");
+                        $.tmpl("songListTemplate", item).appendTo("#songlist");
                     });
                 });
                 $(".song").live("click", function () {
                     selectedItem = $.tmplItem(this);
-                    var url = selectedItem.data.Url+'?play=true';
+                    var songinfo = $.getJSON(selectedItem.data.Url, function (item) {
+                        $("#songinfo").empty();
+                        $.tmpl("songTemplate", item).appendTo("#songinfo");
+                    });
+                    var url = selectedItem.data.Url + '?play=true';
                     $('audio').prop('src', url);
                     audioElem.play();
                 });
-                $('#getsongs').click(function () {
-                    $.getJSON('/api/music/', function (data) {
-                    });
+                //TODO: Make true single page app.. not these stupid click functions
+                $('#addsongs').click(function () {
+                    $('#songs').hide();
+                    $('#upload').show();
                 });
-
+                $('#getsongs').click(function () {
+                    $('#upload').hide();
+                    $('#songs').show();
+                });
+               
                 (function () {
                     var bar = $('.bar');
                     var percent = $('.percent');
@@ -82,22 +92,25 @@
                     <audio id="audioplayer" src="" controls="controls" type="audio/mpeg" >
                       Your browser does not support the audio element.
                     </audio>
-                <p>Here comes the player</p>
+                    <div id="songinfo">
+                    </div>
                 </section>
                 <section id="songs">
                     <p>Here come the songs</p>
                     <ul id="songlist">
                     </ul>
+                </section>
+                <section id="upload">
                     <form method="post" id="ajaxform" action="/api/music" enctype="multipart/form-data">
                         <input type="hidden" name="MAX_FILE_SIZE" value="100000">
                         <input type="file" name="file" multiple="true" />
                         <input type="submit" />
                     </form>
+                    <div class="progress">                                            
+                        <div class="bar"></div>
+                        <div class="percent">0%</div>
+                    </div>
                 </section>
-                <div class="progress">
-                    <div class="bar"></div>
-                    <div class="percent">0%</div>
-                </div>
             </article>
 			<aside>
 				<h3>Guitarparty info here</h3>
