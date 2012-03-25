@@ -15,18 +15,25 @@
         <meta name="viewport" content="width=device-width" />
         <script type="text/javascript">
             $(function () {
-                $.template("songTemplate", "<li>${Artist} - ${Title}</li>");
-                var songs = $.getJSON('/api/music/', function (data) {
-                    for (i in data) {
-                        var arr = [{ "Artist": data[i].Artist, "Title": data[i].Title}]
-                        $.tmpl("songTemplate", arr).appendTo("#songlist");
-                    }
+                var selectedItem = null;
+                var audioElem = document.getElementById('audioplayer');
+                $.template("songTemplate", "<li class='song'>${Artist} - ${Title}</li>");
+                var songs = $.getJSON('/api/music/', function (items) {
+                    $.each(items, function (i, item) {
+                        $.tmpl("songTemplate", item).appendTo("#songlist");
+                    });
+                });
+                $(".song").live("click", function () {
+                    selectedItem = $.tmplItem(this);
+                    var url = selectedItem.data.Url+'?play=true';
+                    $('audio').prop('src', url);
+                    audioElem.play();
                 });
                 $('#getsongs').click(function () {
                     $.getJSON('/api/music/', function (data) {
                     });
                 });
-            
+
                 (function () {
                     var bar = $('.bar');
                     var percent = $('.percent');
@@ -72,6 +79,9 @@
 		<div id="main" class="wrapper clearfix">
             <article>
 			    <section id="player">
+                    <audio id="audioplayer" src="" controls="controls" type="audio/mpeg" >
+                      Your browser does not support the audio element.
+                    </audio>
                 <p>Here comes the player</p>
                 </section>
                 <section id="songs">
