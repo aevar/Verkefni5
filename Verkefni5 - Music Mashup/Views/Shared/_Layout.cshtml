@@ -35,7 +35,7 @@
                     var url = selectedItem.data.Url + '?play=true';
                     $('audio').prop('src', url);
                     audioElem.play();
-                    SearchGuitarParty($(this).text());
+                    SearchGuitarParty(selectedItem.data.Title);
                 });
                 //TODO: Make true single page app.. not these stupid click functions
                 $('#addsongs').click(function () {
