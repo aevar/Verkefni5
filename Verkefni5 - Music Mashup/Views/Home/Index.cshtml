@@ -1,3 +1,41 @@
 @{
-    ViewBag.Title = "Welcome to ASP.NET Single Page Application";
+    ViewBag.Title = "The MusicMashup api!";
 }
+
+<div id="main" class="wrapper clearfix">
+    <article>
+		<section id="player">
+            <audio id="audioplayer" src="" controls="controls" type="audio/mpeg" >
+                Your browser does not support the audio element.
+            </audio>
+            <div id="songinfo">
+            </div>
+        </section>
+        <section id="songs">
+            <form method="get" id="searchform" action="/api/music" enctype="multipart/form-data">
+                <input type="genre" name="genre" placeholder="Genre.. pop, rock etc.">
+                <input type="performer" name="performer" placeholder="Artist"/>
+                <input type="title" name="title" placeholder="Song title" />
+                <input type="submit" value="Filter" />
+            </form>
+            <p>Here come the songs</p>
+            <ul id="songlist">
+            </ul>
+        </section>
+        <section id="upload">
+            <form method="post" id="ajaxform" action="/api/music" enctype="multipart/form-data">
+                <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                <input type="file" name="file" multiple="true" />
+                <input type="submit" />
+            </form>
+            <div class="progress">                                            
+                <div class="bar"></div>
+                <div class="percent">0%</div>
+            </div>
+        </section>
+    </article>
+	<aside>
+		<h3>Guitarparty connection</h3>
+		<p>Pick a song and we will find the chords.</p>
+	</aside>
+</div> <!-- #main -->

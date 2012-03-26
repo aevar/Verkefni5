@@ -163,6 +163,7 @@ nav a:hover{
 .percent { position:absolute; display:inline-block; top:0; left:48%; }
 #songinfo span, #searchform input { display:block }
 #upload {display:none}
+.song{ cursor: pointer; }
 
 
 
