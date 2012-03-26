@@ -76,6 +76,16 @@
                         },
                         complete: function (xhr) {
                             status.html(xhr.responseText);
+                        },
+                        success: function (data) {
+                            $("#songlist").empty();
+                            $.getJSON('/api/music/', function (items) {
+                                $.each(items, function (i, item) {
+                                    $.tmpl("songListTemplate", item).appendTo("#songlist");
+                                });
+                            });
+                            $('#upload').hide();
+                            $('#songs').show();
                         }
                     });
                 })();
